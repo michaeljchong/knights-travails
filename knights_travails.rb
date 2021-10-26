@@ -35,3 +35,17 @@ def build_tree(start, finish)
   board
 end
 
+def knight_moves(start, finish)
+  board = build_tree(start, finish)
+  path = []
+  current_node = board[finish[0]][finish[1]]
+  until current_node.nil?
+    path.unshift current_node.position
+    current_node = current_node.parent
+  end
+  path
+end
+
+p knight_moves([0,0],[1,2]) # [[0,0],[1,2]]
+p knight_moves([0,0],[3,3]) # [[0,0],[1,2],[3,3]]
+p knight_moves([3,3],[0,0]) # [[3,3],[1,2],[0,0]]
