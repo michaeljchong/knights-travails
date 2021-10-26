@@ -43,9 +43,10 @@ def knight_moves(start, finish)
     path.unshift current_node.position
     current_node = current_node.parent
   end
-  path
+  puts "You made it in #{path.length} moves! Here's your path:"
+  path.each { |pos| p pos }
 end
 
-p knight_moves([0,0],[1,2]) # [[0,0],[1,2]]
-p knight_moves([0,0],[3,3]) # [[0,0],[1,2],[3,3]]
-p knight_moves([3,3],[0,0]) # [[3,3],[1,2],[0,0]]
+knight_moves([0,0],[1,2]) # [[0,0],[1,2]]
+knight_moves([0,0],[3,3]) # [[0,0],[1,2],[3,3]]
+knight_moves([3,3],[4,3]) # [[3,3],[1,2],[0,0]]
